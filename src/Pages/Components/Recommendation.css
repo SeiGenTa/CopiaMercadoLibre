@@ -1,0 +1,54 @@
+.body-recommendation{
+    display:flex;
+    position: relative;
+    flex-direction: column;
+    color: black;
+}
+
+.body-recommendation .scrolleable{
+    display:flex;
+    position: relative;
+    flex-direction:row;
+    overflow-x: auto;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.body-recommendation .scrolleable .BoxItem{
+    display:flex;
+    position: relative;
+    flex-direction:column;
+    width: 200px;
+    height: 300px;
+    margin: 20px;
+    border: 1px solid gray;
+    background-color: aliceblue;
+    border-radius: 20px;
+}
+.body-recommendation .scrolleable .BoxItem img{
+    display: block;
+    width: 200px;
+    height: 200px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    overflow: hidden;
+}
+
+.body-recommendation .scrolleable .BoxItem .name{
+    display: flex;
+    height: 50px;
+    width: 200px;
+    justify-content: center;
+    overflow: hidden;
+}
+.body-recommendation .scrolleable .BoxItem .price{
+    display: flex;
+    height: 50px;
+    height: 20px;
+    color: green;
+    padding-left: 12px;
+}
+
+.body-recommendation .scrolleable::-webkit-scrollbar {
+    width: 0; 
+  }

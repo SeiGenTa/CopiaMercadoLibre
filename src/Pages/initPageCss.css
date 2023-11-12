@@ -1,0 +1,11 @@
+body{
+    position: relative;
+    overflow-x: hidden;
+    overflow-y:inherit;
+    font-family: 'Harabara Mais', sans-serif;
+    background-color:rgb(212, 212, 212);
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+

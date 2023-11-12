@@ -1,0 +1,129 @@
+.top-bar{
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    height: 60px;
+    background-color: #ffe600;
+    right: 0;
+    z-index: 4;
+  }
+
+.buttonReturnInit{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.divName{
+    left: 80px;
+    letter-spacing: 0px;
+    line-height: 5px;
+    font-weight:900;
+    font-size:large;
+}
+
+.imageInit{
+    left: 10px;
+    height: 35px;
+    margin-right: 10px;
+}
+
+.search{
+    display:flex;
+    position: relative;
+    flex: 3;
+}
+
+.message-label {
+    position: flex;
+    display:contents;
+    flex-grow: 1;
+    left: 0;
+    flex-direction: column;
+}
+
+.mi-input {
+    position: relative;
+    top: 0;
+    left: 0;
+    flex-grow: 1;
+    margin: 10px;
+    padding: 8px;
+    background-color: none;
+    border: 1px solid #00000017; 
+    border-radius: 25px;
+    box-shadow: 100px;
+    transition: none; 
+    color: black;
+    font-size: medium;
+    font-weight:500;
+    background-color: antiquewhite;
+    outline: none;
+}
+
+.mi-input:focus{
+    border: 1px solid #2d3277;
+}
+
+.textInit{
+    position: absolute;
+    top: 3px;
+    left: 18px;
+    color: rgb(167, 167, 167);
+    z-index: 1;
+    overflow: hidden;
+    width: 60%;
+    height: 30px;
+}
+
+.buttonSearch{
+    position: relative;
+    flex-shrink: 1;
+    width: 40px;
+    z-index: 2;
+    top: 10px;
+    padding-right: 40px;
+}
+
+.buttonSearch img{  
+    width: 40px;
+}
+
+.iconsExt{
+    justify-content: center;
+    position: relative;
+    display: flex;
+    flex: 1;
+}
+
+.iconsExt img{
+    position:sticky;
+    top: 10px;
+    padding-right: 10px;
+    height: 30px;
+}
+
+.top-bar button{
+    display: flex;
+    position: relative;
+    top: 10px;
+    height: 40px;
+    width: 40px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0);
+    box-shadow: none;
+    border: #00000000;
+}
+
+.top-bar button img{
+    height: 30px;
+}
+
+@media screen and (min-width: 880px) {
+    .top-bar button{
+        display: none;
+    }
+}
