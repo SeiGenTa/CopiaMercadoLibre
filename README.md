@@ -22,3 +22,5 @@ El objetivo de este proyecto es estudiar y practicar el desarrollo de aplicacion
 ## Instalación
 
 1. Clona este repositorio: 'https://github.com/SeiGenTa/CopiaMercadoLibre.git'
+2. ingresa a la carpeta "cd CopiaMercadoLibre"
+3. Instala las dependencias: `npm install`
