@@ -15,9 +15,7 @@ El objetivo de este proyecto es estudiar y practicar el desarrollo de aplicacion
 
 - Implementación de páginas y componentes clave de Mercado Libre.
 - Animaciones del menu
-
-## Objetivos:
-- Se espera obtener productos de mercado libre con las apis publicas
+- Toma productos reales de mercado libre atravez de su api
 
 ## Instalación
 

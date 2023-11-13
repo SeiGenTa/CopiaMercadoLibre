@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
-import './TopBar.css'
+import './cssStyles/TopBar.css'
 import iconSearch from '../../assets/search.png'
 import iconMenu from '../../assets/menu.png'
 import SideBar from './Sidebar';
 
 const TopBar = () => {
-
-    const isPortrait = useMediaQuery({ query: '(orientation: portrait)' });
     const isLandscape = useMediaQuery({ query: '(orientation: landscape)' });
 
     const [valorInput, setValorInput] = useState('');

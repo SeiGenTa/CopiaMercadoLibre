@@ -1,4 +1,4 @@
-import './SideBar.css';
+import './cssStyles/SideBar.css';
 
 function SideBar({divVisible}) {
 

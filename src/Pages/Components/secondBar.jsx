@@ -1,4 +1,4 @@
-import './secondBar.css'
+import './cssStyles/secondBar.css'
 import iconSend from '../../assets/send.png'
 import iconUser from '../../assets/user.png'
 

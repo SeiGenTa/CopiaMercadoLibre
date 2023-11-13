@@ -1,0 +1,74 @@
+.DivPromoModePay {
+    background-color: white;
+    border-radius: 2px;
+    display: flex;
+    margin: 50px;
+    border-color: gray;
+    overflow-x: scroll;
+}
+
+.DivPromoModePay::-webkit-scrollbar {
+    width: 0; 
+  }
+
+.DivPromoModePay h3{
+    font-size: medium;
+    line-height: 15px;
+    color: black;
+    font-weight: 100;
+    overflow: hidden;
+}
+.DivPromoModePay p{
+    font-size: small;
+    line-height: 5px;
+    color: rgb(0, 47, 255);
+}
+.DivPromoModePay .DivPart1{
+    flex: 2;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.DivPromoModePay .Promos{
+    position: relative;
+    display: flex;
+    padding: 10px;
+    border-color: black;
+    border-left: 1px solid rgba(128, 128, 128, 0.493);
+    flex: 3;
+    align-items: center;
+}
+.DivPromoModePay .DivPart1 .LineBlueLeft{
+    margin: 5px;
+    width: 2px;
+    height: 80px;
+    background-color: rgb(0, 47, 255);
+}
+.DivPromoModePay .Promos img{
+    position: absolute;
+    display: flex;
+    padding-left: 2px;
+}
+
+.DivPromoModePay .Promos .radiusCirc{
+    display: flex;
+    align-items: center;
+    border: 1px solid gray;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
+
+.DivPromoModePay .Promos .row{
+    padding-left: 20px;
+}
+
+@media screen and (max-width:800px) {
+    .DivPromoModePay .DivPart1{
+        display: none;
+    }
+    .DivPromoModePay .Promos .radiusCirc{
+        border: none;
+    }
+}
