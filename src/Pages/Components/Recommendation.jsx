@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 function Recommendation(){
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [failed, setFailed] = useState(false);
   
     useEffect(() => {
         // Haciendo una solicitud a la API
@@ -24,7 +25,9 @@ function Recommendation(){
             setLoading(false);
           })
           .catch(error => {
-            console.error('Error fetching data:', error);
+            setFailed(true);
+            setLoading(false);
+            console.log("fail when we obtain the MercadoLibre's information")
           });
       }, []);
 
@@ -35,19 +38,21 @@ function Recommendation(){
         <h2> Nuestras sugerencias para tí</h2>
         {loading? <p>Cargando </p> :
                 <a className='scrolleable'>
-                    {data.map((product,index) => {
-                        return (
-                            <div key={index} className='BoxItem'>
-                                <img src={product["thumbnail"]} alt="" />
-                                <div className='name'>
-                                    <h3>{product["title"]}</h3>
-                                </div>
-                                <div className='price'>
-                                    <h3>{"$" + product["price"]}</h3>
-                                </div>
-                            </div>
-                        )
-                    })}
+                  {failed? <p>Parece que tenemos problemas al obtener los productos</p>:
+                    <>{data.map((product,index) => {
+                      return (
+                          <div key={index} className='BoxItem'>
+                              <img src={product["thumbnail"]} alt="" />
+                              <div className='name'>
+                                  <h3>{product["title"]}</h3>
+                              </div>
+                              <div className='price'>
+                                  <h3>{"$" + product["price"]}</h3>
+                              </div>
+                          </div>
+                      )
+                  })}</>
+                  }
                 </a>
         }
     </div>
