@@ -1,10 +1,12 @@
-import { useParams } from "react-router-dom"
+import { useParams , useLocation  } from "react-router-dom"
 import TopBar from "./Components/TopBar"
 import SeconBar from "./Components/secondBar"
 import { useEffect, useState } from "react"
 import './Components/cssStyles/BusquedaPage.css'
 
 export default function Search(){
+    const history = useLocation();
+
     const { data_search } = useParams();
 
     const [data, setData] = useState([]);
@@ -43,7 +45,7 @@ export default function Search(){
 
     useEffect(() => {
         chargeInfo();
-    }, [onlyFreeShip]);
+    }, [onlyFreeShip,history]);
 
     const presOnlyFreeShip = (event)  => {
         setOnlyFreeShip(event.target.checked);
