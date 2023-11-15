@@ -4,27 +4,22 @@ import App  from './Pages/initPage.jsx'
 import './index.css'
 
 import {
-  createBrowserRouter,
-  RouterProvider,
+  BrowserRouter,
+  Route,
+  Routes,
 } from "react-router-dom";
 import "./index.css";
 import MenuInit from './Pages/Menu.jsx';
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: MenuInit(),
-    children:[
-      {
-        path:"search/:name_item",
-        element: <p> EN BUSQUEDA :D</p>
-      }
-    ]
-  },
-]);
+import Search from './Pages/BusquedaPage.jsx';
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<MenuInit/>} />
+        <Route path='search/:data_search' element={<Search/>}>
+        </Route>
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );

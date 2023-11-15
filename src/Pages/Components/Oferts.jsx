@@ -12,15 +12,16 @@ function OnSale(){
         setValorInput((valorInput + 1)%onSales.length);
     };
 
-    setTimeout(function(){
-        changePhoto();
-    }, 6000);
+    useEffect(() => {
+        setTimeout(function(){
+            changePhoto();
+        }, 6000);
+    })
     
     return(
-        <div className='posSales' width={(window.innerWidth).toString + "px"}>
+        <div className='posSales'>
             {onSales.map((image,index) => {
-                var ubq = 100 * (-valorInput);
-                return <img key={index} src={image} style={{left:ubq.toString() + "%", animationDelay:(ubq == 0? 0: 500)}} />
+                return <img key={index} src={image} style={{left:100 * (index-valorInput) + "%"}} />
                 })}
         </div>
     );

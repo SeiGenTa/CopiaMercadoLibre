@@ -1,5 +1,4 @@
 import './cssStyles/recommendation.css'
-import obtenerDatosProductos from "../../Conection/Conection.jsx"
 import { useState, useEffect } from 'react';
 
 function Recommendation(){
@@ -8,8 +7,8 @@ function Recommendation(){
     const [failed, setFailed] = useState(false);
   
     useEffect(() => {
-        // Haciendo una solicitud a la API
-        fetch('https://api.mercadolibre.com/sites/MLC/search?category=MLC1055')
+
+        fetch('https://api.mercadolibre.com/sites/MLC/search?limit=10&category=MLC1055')
           .then(response => {
             if (!response.ok) {
               throw new Error('Network response was not ok');
@@ -17,11 +16,7 @@ function Recommendation(){
             return response.json();
           })
           .then(apiData => {
-            // Aquí, 'apiData' es el objeto JSON que contiene múltiples objetos
-            // Puedes trabajar con los datos como desees
-            
-    
-            setData(apiData["results"].slice(0,6));
+            setData(apiData["results"]);
             setLoading(false);
           })
           .catch(error => {
@@ -30,8 +25,6 @@ function Recommendation(){
             console.log("fail when we obtain the MercadoLibre's information")
           });
       }, []);
-
-    var myInfo = obtenerDatosProductos();
 
     return (
     <div className='body-recommendation'>
