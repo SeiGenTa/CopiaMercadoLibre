@@ -43,7 +43,7 @@ const TopBar = () => {
                     onKe
                     />
                     <div className='buttonSearch' height={altura}>
-                      <Link to={valorInput.length!=0? '/search/'+valorInput.toString().replace(/\s+/g,'%'): null}><img src={iconSearch} alt="" /></Link>
+                      <Link to={valorInput.length!=0? '/search/'+valorInput.toString().replace(/\s+/g,'%')+"/none": null}><img src={iconSearch} alt="" /></Link>
                     </div>
                 </label>
             </div>

@@ -7,7 +7,7 @@ import './Components/cssStyles/BusquedaPage.css'
 export default function Search(){
     const history = useLocation();
 
-    const { data_search } = useParams();
+    const { data_search,dataCategori } = useParams();
 
     const [data, setData] = useState([]);
     const [loading,setLoading] = useState(true);
@@ -16,13 +16,22 @@ export default function Search(){
     const [onlyFreeShip, setOnlyFreeShip] = useState(false);
 
     const chargeInfo = () => {
-        console.log("value: onlyFreeShip: "+onlyFreeShip)
-        var mySolicitud = 'https://api.mercadolibre.com/sites/MLC/search?q=' + data_search.replace(/%/g, "%20");
+        var mySolicitud;
+        if (data_search != "none"){
+            mySolicitud = 'https://api.mercadolibre.com/sites/MLC/search?q=' + data_search.replace(/%/g, "%20");
+        }
+        else if(dataCategori != "none"){
+            mySolicitud = 'https://api.mercadolibre.com/sites/MLC/search?&category=' + dataCategori;
+        }
+
+        
         if (onlyFreeShip){
             console.log("con envio gratis");
             mySolicitud = mySolicitud + "&shipping_cost=free";
         }
 
+
+        console.log("cambiando");
         fetch(mySolicitud)
         .then(response => {
             console.log(mySolicitud)

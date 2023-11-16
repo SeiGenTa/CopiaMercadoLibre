@@ -1,3 +1,36 @@
+.secondBarMaster{
+    position: relative;
+}
+
+
+.divCategories{
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 10px;
+    z-index: 1;
+    background-color: #ffe600;
+    top: 50px;
+    overflow: hidden;
+    transition: transform 0.5s ease;
+    width: 100%;
+    height: 0;
+}
+
+.divCategorie{
+    padding: 5px;
+    margin: 5px;
+    border-radius: 3px;
+    color: #000;
+    max-lines: 1;
+    overflow-x: hidden;
+}
+
+.divCategorie:hover{
+    background-color: #9b8b00;
+}
+
+
 .secondBar{
     display: flex;
     position: relative;
@@ -9,6 +42,7 @@
     align-items: center;
     justify-content: center;
     align-content: center;
+    z-index: 2;
 }
 
 .secondBar p{
@@ -24,11 +58,20 @@
 }
 
 .buttonSearched{
+    height: 30px;
+    border-radius: 20px;
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-shrink: 1;
     width: 100px;
     color: #000;
+}
+
+.buttonSearched:hover{
+    background-color: #00000036;
+    
+    
 }
 
 .ubqSend{
@@ -85,5 +128,9 @@
     }
     .secondBar{
         justify-content: space-between;
+    }
+
+    .divCategories{
+        display: none;
     }
 }

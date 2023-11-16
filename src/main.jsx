@@ -17,7 +17,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<MenuInit/>} />
-        <Route path='search/:data_search' element={<Search/>}>
+        <Route path='search/:data_search/:dataCategori/' element={<Search/>}>
         </Route>
       </Routes>
     </BrowserRouter>
