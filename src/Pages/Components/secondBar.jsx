@@ -42,7 +42,7 @@ function SeconBar(prop) {
             <div onMouseLeave={changeShowCateries}>
                <div className={'divCategories'} style={{height:(showCategories? "auto": 0)}}>
                    {(dataCategories).map((categorie,index) => {
-                    return (<Link to={'/search/none/'+categorie["id"]} key={index}><p  className="divCategorie">{categorie["name"]}</p> </Link>)
+                    return (<Link to={'/search/none/'+categorie["id"]} key={index} onClick={changeShowCateries}><p  className="divCategorie">{categorie["name"]}</p> </Link>)
                    })}
                 </div>
             </div>: null

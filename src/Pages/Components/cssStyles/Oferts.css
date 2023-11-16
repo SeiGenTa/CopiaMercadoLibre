@@ -5,6 +5,7 @@
     width: 100%;
     height: 300px;
     justify-content:flex-start;
+    transition-duration: 300ms;
 }
 
 .posSales img{
@@ -13,7 +14,7 @@
     width: 100%; /* Hace que la imagen ocupe el 100% del ancho del contenedor */
     height: 100%; /* Hace que la imagen ocupe el 100% de la altura del contenedor */
     object-fit:contain; 
-    animation-duration: 1s;
+    transition-duration: 300ms;
 }
 
 @media screen and (max-width: 1425px) {
