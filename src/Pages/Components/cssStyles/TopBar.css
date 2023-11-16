@@ -47,6 +47,11 @@
     flex-direction: column;
 }
 
+.message-label form{
+    display: flex;
+    width: 109%;
+}
+
 .mi-input {
     position: relative;
     top: 0;

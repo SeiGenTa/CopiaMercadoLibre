@@ -3,7 +3,7 @@ import './cssStyles/TopBar.css'
 import iconSearch from '../../assets/search.png'
 import iconMenu from '../../assets/menu.png'
 import SideBar from './Sidebar';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate  } from 'react-router-dom';
 import disneyPNG from '../../assets/Dysnei.png'
 
 const TopBar = () => {
@@ -18,12 +18,13 @@ const TopBar = () => {
         setValorInput(event.target.value);
       };
 
-  const [altura, setAltura] = useState(null);
+    const navigate = useNavigate()
 
-  const handleImagenCargada = (event) => {
-    const imgAltura = event.target.height;
-    setAltura(imgAltura);
-  };
+    const naviga = (event) => {
+      event.preventDefault();
+      if (valorInput.length != 0)
+        navigate('/search/'+valorInput.toString().replace(/\s+/g,'%')+"/none");
+    };
 
   return (
     <div>
@@ -33,16 +34,18 @@ const TopBar = () => {
               <Link to='/'><img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Mercadolibre_textlogo.svg" alt="" height={"30px"}/></Link>
             </div>
             <div className='search'>
-                <label htmlFor="miInput" className="message-label">
+              <label htmlFor="miInput" className="message-label">
                     {valorInput.length == 0 && <p className='textInit'>Buscar productos,marcas y más ...</p>}
+                    <form onSubmit={naviga}>
                     <input
                     type="text"
                     id="miInput"
                     onChange={handleInputChange}
                     className="mi-input"
-                    onKe
+                    
                     />
-                    <div className='buttonSearch' height={altura}>
+                    </form>
+                    <div className='buttonSearch'>
                       <Link to={valorInput.length!=0? '/search/'+valorInput.toString().replace(/\s+/g,'%')+"/none": null}><img src={iconSearch} alt="" /></Link>
                     </div>
                 </label>
