@@ -6,7 +6,8 @@ import SideBar from './Sidebar';
 import { Link,useNavigate  } from 'react-router-dom';
 import disneyPNG from '../../assets/Dysnei.png'
 
-const TopBar = () => {
+const TopBar = (prop) => {
+    const dataCategories = (prop.categories == null)? []: prop.categories;
     const [valorInput, setValorInput] = useState('');
     const [botonPresionado, setBotonPresionado] = useState(false);
 
@@ -55,7 +56,7 @@ const TopBar = () => {
                 <img src="https://upload.wikimedia.org/wikipedia/commons/5/5d/START_logo_2021.svg" alt="" />
             </div>
         </div>
-        <SideBar divVisible={botonPresionado}/>
+        <SideBar divVisible={botonPresionado} categories={dataCategories}/>
     </div>
     
   );

@@ -5,27 +5,15 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 
-function SeconBar() {
+function SeconBar(prop) {
 
-    const [dataCategories, setDataCategories] = useState([]);
+    const dataCategories = (prop.categories == null)? []: prop.categories;
+
     const [showCategories, setShowCategories] = useState(false)
 
     const changeShowCateries = () => {
         setShowCategories(!showCategories);
     }
-
-    useEffect(() => {
-        fetch("https://api.mercadolibre.com/sites/MLC/categories")
-        .then(response=> {
-            if (!response.ok) {
-              throw new Error('Network response was not ok');
-            }
-            return response.json();
-        }).then(data =>{
-            console.log(data[0]);
-            setDataCategories(data);
-        })
-        }, [])
 
     return (
         <div className='secondBarMaster'>

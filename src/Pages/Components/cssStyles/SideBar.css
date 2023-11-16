@@ -9,6 +9,35 @@
     flex-direction: column;
     align-items: center;
     transition-duration: 300ms;
+    border-top: 1px solid rgba(0, 0, 0, 0.288);
+    border-right: 1px solid rgba(0, 0, 0, 0.288);
+    border-top-right-radius: 20px;
+}
+
+.emergent .categories{
+    display: none;
+    border-top-right-radius: 20px;
+    position: absolute;
+    top: 60px;
+    width: 170px;
+    height: 100%;
+    background-color: #9b8b00;
+    z-index: 4;
+    transition-duration: 300ms;
+}
+
+.emergent .categories .categoriasPosition{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    overflow-y: scroll;
+}
+.emergent .categories .categoriasPosition::-webkit-scrollbar{
+    width: 0;
+}
+
+.emergent .categories .categoriasPosition p{
+    color: white;
 }
 
 .emergent .sideBar button{
@@ -30,7 +59,11 @@
 }
 
 @media screen and (max-width:880px) {
-    .emergent .sideBar{
+    .emergent .sideBar {
+        display:flex;
+        position: fixed;
+    }
+    .emergent .categories{
         display:flex;
         position: fixed;
     }

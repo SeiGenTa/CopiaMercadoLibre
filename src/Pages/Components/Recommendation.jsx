@@ -7,7 +7,6 @@ function Recommendation(){
     const [failed, setFailed] = useState(false);
   
     useEffect(() => {
-
         fetch('https://api.mercadolibre.com/sites/MLC/search?limit=10&category=MLC1055')
           .then(response => {
             if (!response.ok) {
