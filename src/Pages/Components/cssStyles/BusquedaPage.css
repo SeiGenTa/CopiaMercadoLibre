@@ -188,7 +188,9 @@
         align-items: center;
         padding: 10px;
         border-radius: 20px;
-        top: 120px;
+        top: 170px;
+        width: 90%;
+        height: calc(90% - 150px);
         border: 1px solid black;
     }
 }
