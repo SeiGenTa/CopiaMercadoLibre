@@ -1,0 +1,62 @@
+#card-advertising {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  height: 280px;
+  width: 205px;
+  transition: transform 0.3s;
+}
+
+#card-advertising:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+}
+
+#card-advertising img {
+  display: flex;
+}
+
+#card-advertising .card-advertising-img {
+  display: flex;
+  height: 105px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+#card-advertising h2 {
+  margin-block: 5px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+#card-advertising p {
+  height: 100%;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+#card-advertising a {
+  padding: 2px;
+  background-color: var(--mercadolibre-light-opacity-blue);
+  width: 100%;
+  text-align: center;
+  color: var(--mercadolibre-blue);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 3px;
+  transition: all 0.3s;
+}
+
+#card-advertising a:hover {
+  background-color: var(--mercadolibre-blue);
+  color: white;
+}

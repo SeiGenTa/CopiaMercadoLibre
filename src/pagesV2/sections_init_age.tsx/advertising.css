@@ -1,0 +1,146 @@
+#advertising {
+  display: flex;
+  width: 100vw;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+}
+
+/* Estilos imagenes */
+.div-advertising-img {
+  display: flex;
+  width: 100vw;
+  height: 250px;
+  flex-direction: column;
+  align-items: center;
+  z-index: 0;
+}
+
+.div-images {
+  display: block;
+  position: absolute;
+  width: 100vw;
+  height: 400px;
+  z-index: 0;
+}
+
+.div-images img {
+  width: 100vw;
+  height: 400px;
+  object-fit: cover;
+  position: absolute;
+}
+
+.div-images::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0),
+    var(--mercadolibre-light-gray)
+  );
+  z-index: 1;
+}
+
+/* FIN estilos imagenes */
+
+/* Botones desplazamiento */
+.div-buttons {
+  display: flex;
+  width: 100vw;
+  height: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+}
+
+.div-buttons span {
+  font-size: 1.5rem;
+  color: var(--mercadolibre-gray);
+  opacity: 0.8;
+  cursor: pointer;
+  background-color: white;
+  border-radius: 50%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s;
+}
+
+.div-buttons span:hover {
+  opacity: 1;
+}
+
+.container-carrusel {
+  display: flex;
+  position: relative;
+  height: 300px;
+  width: 100%;
+  max-width: 1200px;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.container-carrusel .div-buttons {
+  pointer-events: none;
+  display: flex;
+  position: absolute;
+  width: 100%;
+  justify-content: space-between;
+  z-index: 10;
+  padding-right: 10px;
+}
+.container-carrusel .div-buttons span {
+  pointer-events: all;
+}
+
+.div-advertising {
+  display: flex;
+  width: 100%;
+}
+
+#carrucel-advertising {
+  display: flex;
+  transition: transform 0.2s ease;
+  /* Desplazamiento opcional si decides agregar botones */
+}
+
+.div-card {
+  display: flex;
+  flex: 0 0 calc((100%) / 5); /* Para pantallas pequeñas, 1 solo elemento visible */
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+@media (max-width: 1100px) {
+  .div-card {
+    flex: 0 0 calc((100%) / 4); /* Para pantallas medianas, 3 elementos visibles */
+  }
+}
+
+@media (max-width: 930px) {
+  .div-card {
+    flex: 0 0 calc((100%) / 3); /* Para pantallas medianas, 3 elementos visibles */
+  }
+}
+
+@media (max-width: 700px) {
+  .div-card {
+    flex: 0 0 calc((100%) / 2); /* Para pantallas pequeñas, 2 elementos visibles */
+  }
+}
+
+@media (max-width: 500px) {
+  .div-card {
+    flex: 0 0 calc((100%) / 1); /* Para pantallas pequeñas, 1 solo elemento visible */
+  }
+}
