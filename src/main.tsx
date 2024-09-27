@@ -5,7 +5,7 @@ import "./index.css";
 
 import { createRoot } from "react-dom/client";
 import { ToastContainer } from "react-toastify";
-import Index from "./pagesV2/Index";
+import Index from "./pagesV2/index";
 
 const App = () => {
   return (
