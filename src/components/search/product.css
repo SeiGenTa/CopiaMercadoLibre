@@ -1,0 +1,55 @@
+.cont-product {
+  background-color: white;
+  border-radius: 5px;
+  min-height: 300px;
+  width: 100%;
+  padding-block: 20px;
+  padding-right: 10px;
+}
+
+.cont-product img {
+  width: 200px;
+  object-fit: contain;
+}
+
+.cont-product div {
+  padding: 10px;
+  width: 100%;
+}
+
+.cont-product #name {
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+.cont-product #price {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.cont-product #shipping {
+  font-size: 0.8rem;
+  color: #00a650;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.cont-product #shipping-full {
+  font-size: 1rem;
+  color: #00a650;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.cont-product #seller {
+  font-size: 0.6rem;
+  color: gray;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.cont-product #original-price {
+  font-size: 0.5rem;
+  color: gray;
+  text-decoration: line-through;
+}

@@ -10,6 +10,7 @@
   --mercadolibre-light-opacity-blue: #3483fa48;
   --mercadolibre-gray: #333333;
   --mercadolibre-light-gray: #ebebeb;
+  --mercadolibre-green: #00a650;
 
   color-scheme: light dark;
   color: var(--mercadolibre-gray);

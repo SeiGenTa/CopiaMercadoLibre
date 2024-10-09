@@ -1,0 +1,24 @@
+#search #area-products {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 885px;
+  gap: 1px;
+  padding-top: 50px;
+  margin: 0 auto;
+  list-style: none;
+}
+
+#search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#search nav {
+  width: 100%;
+  max-width: 300px;
+}

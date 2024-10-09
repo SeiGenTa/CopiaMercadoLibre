@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./appbar.css";
 import TextInput from "./textInput";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -67,84 +67,109 @@ const categorias = {
 };
 
 const AppBar = () => {
-  return (
-    <div className="app-bar">
-      <div className="space-app-bar column">
-        <div className="row" id="app-bar-up">
-          <Link to="/">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Mercadolibre_textlogo.svg"
-              alt=""
-              id="logo-app-bar"
-            />
-          </Link>
-          <TextInput
-            id="search-app-bar"
-            style={{ width: "100%", maxWidth: "600px" }}
-            icon={<span className="material-symbols-outlined">search</span>}
-            placeholder="Buscar productos, marcas y más..."
-          />
-          <img
-            className="clickable"
-            src="https://http2.mlstatic.com/D_NQ_783102-MLA77243951709_062024-OO.webp"
-            alt=""
-            id="publicity-right"
-            onClick={() => {
-              toast("Esto es una publicidad, no hay funcionalidad");
-            }}
-          />
-        </div>
-        <div className="row" id="app-bar-down">
-          <div
-            id="position"
-            className="row clickable"
-            onClick={() => {
-              toast(
-                "Esto es una configuracion de ubicacion, no hay funcionalidad"
-              );
-            }}
-          >
-            <span className="material-symbols-outlined">location_on</span>
-            <div className="column" id="nav-ubq">
-              <span style={{ fontSize: "0.5rem" }}>Ingresa tu</span>
-              <span>ubicacion</span>
-            </div>
-          </div>
-          <div className="nav-filters row">
-            <div className="row categories">
-              <span className="material-symbols-outlined">arrow_drop_down</span>
-              <span>Categorías</span>
+  const navigate = useNavigate();
 
-              <nav id="nav-categories">
-                {Object.keys(categorias).map((a, index) => {
-                  return (
-                    <span key={index} className="category-span clickable">
-                      <p>{a}</p>
-                      <div className="category-item column">
-                        {categorias[a].map((b: string[], index2: number) => {
-                          return <span key={`${index}-${index2}`}>{b}</span>;
-                        })}
-                      </div>
-                    </span>
-                  );
-                })}
-              </nav>
-            </div>
-            <span>Cupones</span>
-            <span>Historial</span>
-            <span>Supermercado</span>
-            <span>Moda</span>
-            <span>Mercado play</span>
-            <span>Vender</span>
+  const search = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const search = event.currentTarget.querySelector("input")?.value;
+
+    navigate(`/search/${search}`);
+  };
+
+  return (
+    <>
+      <div className="app-bar">
+        <div className="space-app-bar column">
+          <div className="row" id="app-bar-up">
+            <Link to="/">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Mercadolibre_textlogo.svg"
+                alt=""
+                id="logo-app-bar"
+              />
+            </Link>
+            <TextInput
+              id="search-app-bar"
+              style={{ width: "100%", maxWidth: "600px" }}
+              icon={<span className="material-symbols-outlined">search</span>}
+              placeholder="Buscar productos, marcas y más..."
+              onSubmit={(event) => search(event)}
+            />
+            <img
+              className="clickable"
+              src="https://http2.mlstatic.com/D_NQ_783102-MLA77243951709_062024-OO.webp"
+              alt=""
+              id="publicity-right"
+              onClick={() => {
+                toast("Esto es una publicidad, no hay funcionalidad");
+              }}
+            />
           </div>
-          <div className="row" id="right-content">
-            <span>Ingresar</span>
-            <span>Registrarse</span>
-            <span className="material-symbols-outlined">shopping_cart</span>
+          <div className="row" id="app-bar-down">
+            <div
+              id="position"
+              className="row clickable"
+              onClick={() => {
+                toast(
+                  "Esto es una configuracion de ubicacion, no hay funcionalidad"
+                );
+              }}
+            >
+              <span className="material-symbols-outlined">location_on</span>
+              <div className="column" id="nav-ubq">
+                <span style={{ fontSize: "0.5rem" }}>Ingresa tu</span>
+                <span>ubicacion</span>
+              </div>
+            </div>
+            <div className="nav-filters row">
+              <div className="row categories">
+                <span className="material-symbols-outlined">
+                  arrow_drop_down
+                </span>
+                <span>Categorías</span>
+
+                <nav id="nav-categories">
+                  {Object.keys(categorias).map((a, index) => {
+                    return (
+                      <span key={index} className="category-span clickable">
+                        <p>{a}</p>
+                        <div className="category-item column">
+                          {categorias[a].map((b: string[], index2: number) => {
+                            return <span key={`${index}-${index2}`}>{b}</span>;
+                          })}
+                        </div>
+                      </span>
+                    );
+                  })}
+                </nav>
+              </div>
+              <span>Cupones</span>
+              <span>Historial</span>
+              <span>Supermercado</span>
+              <span>Moda</span>
+              <span>Mercado play</span>
+              <span>Vender</span>
+            </div>
+            <div className="row" id="right-content">
+              <span>Ingresar</span>
+              <span>Registrarse</span>
+              <span className="material-symbols-outlined">shopping_cart</span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+      <div className="app-bar-mobile column">
+        <div className="top">
+          <span className="material-symbols-outlined">menu</span>
+          <form className="space-input" onSubmit={(event) => search(event)}>
+            <span className="material-symbols-outlined">search</span>
+            <input type="text" name="" placeholder="Buscar en mercado libre" />
+          </form>
+          <span className="material-symbols-outlined">shopping_cart</span>
+        </div>
+        <div className="bottom"></div>
+      </div>
+    </>
   );
 };
 

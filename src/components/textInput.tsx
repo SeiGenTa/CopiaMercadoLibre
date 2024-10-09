@@ -6,20 +6,23 @@ const TextInput = ({
   placeholder,
   id,
   style,
+  onSubmit,
 }: {
   icon?: React.JSX.Element;
   placeholder?: string;
   id?: string;
   style?: React.CSSProperties;
+  onSubmit?: (event: React.FormEvent<HTMLFormElement>) => void;
 }) => {
   return (
-    <div className="row" id="row-search" style={style}>
+    <form className="row" id="row-search" style={style} onSubmit={onSubmit}>
       <input
         type="text"
         className="search-input"
         id={`${id ?? ""}`}
         placeholder={placeholder}
       />
+
       <div
         style={{
           position: "absolute",
@@ -32,7 +35,7 @@ const TextInput = ({
       >
         {icon}
       </div>
-    </div>
+    </form>
   );
 };
 

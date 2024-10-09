@@ -153,21 +153,35 @@ const Advertising = () => {
     <section id="advertising">
       <div className="div-advertising-img" id="div-advertising-img">
         <div className="div-images" id="div-images">
-          {images.map((image, index) => (
-            <img
-              key={index}
-              src={image}
-              alt={`advertising-${index}`}
-              style={{
-                transform: `translateX(${(index - numberShowed) * 100}%)`, // Usar transform en lugar de left
-                transition: "transform 0.2s", // Asegúrate de que el tiempo coincida con la CSS
-                position: "absolute",
-                width: "100%", // Asegúrate de que cada imagen ocupe el ancho completo
-                height: "100%", // Para que se ajuste al contenedor
-                objectFit: "cover", // Para mantener la relación de aspecto
-              }}
-            />
-          ))}
+          {images.map((image, index) => {
+            let relativePosition = index - numberShowed;
+
+            // Hacer la posición circular
+            if (relativePosition > Math.floor(amount / 2)) {
+              relativePosition -= amount;
+            }
+            if (relativePosition < -Math.floor(amount / 2)) {
+              relativePosition += amount;
+            }
+
+            return (
+              <img
+                key={index}
+                src={image}
+                alt={`advertising-${index}`}
+                style={{
+                  transform: `translateX(${relativePosition * 100}%)`, // Usamos el valor multiplicado por 100% para el desplazamiento
+                  transition: "transform 0.2s ease", // Animación suave
+                  position: "absolute",
+                  width: "100%", // Asegúrate de que cada imagen ocupe el ancho completo
+                  height: "100%", // Para que se ajuste al contenedor
+                  objectFit: "cover", // Para mantener la relación de aspecto
+                  visibility:
+                    Math.abs(relativePosition) <= 1 ? "visible" : "hidden", // Mostrar solo las imágenes cercanas
+                }}
+              />
+            );
+          })}
         </div>
         <div className="row div-buttons">
           <span
@@ -213,7 +227,7 @@ const Advertising = () => {
           className="div-advertising"
           style={{
             display: "flex",
-            transform: `translateX(-${(carruselAdvertising / 5) * 100}%)`, // Ajusta según el número de elementos visibles
+            transform: `translateX(-${carruselAdvertising * 100}%)`, // Ajusta según el número de elementos visibles
             transition: "transform 0.5s",
             width: "100%",
           }}

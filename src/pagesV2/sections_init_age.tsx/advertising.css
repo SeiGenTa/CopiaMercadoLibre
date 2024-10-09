@@ -11,7 +11,8 @@
 .div-advertising-img {
   display: flex;
   width: 100vw;
-  height: 250px;
+  height: 30vw;
+  max-height: 300px;
   flex-direction: column;
   align-items: center;
   z-index: 0;
@@ -21,7 +22,8 @@
   display: block;
   position: absolute;
   width: 100vw;
-  height: 400px;
+  height: 30vw;
+  max-height: 500px;
   z-index: 0;
 }
 
