@@ -160,7 +160,34 @@ const AppBar = () => {
       </div>
       <div className="app-bar-mobile column">
         <div className="top">
-          <span className="material-symbols-outlined">menu</span>
+          <div className="button-nav-menu" tabIndex={0}>
+            <span className="material-symbols-outlined">menu</span>
+            <nav className="nav-mobile">
+              <div tabIndex={1} className="categories">
+                <span>Categorias</span>
+                <div></div>
+                  {Object.keys(categorias).map((a, index) => {
+                    return (
+                      <li key={index} tabIndex={index}>
+                        <span>{a}</span>
+                        <ul>
+                          {categorias[a].map((b: string[], index2: number) => {
+                            return <li key={`${index}-${index2}`}>{b}</li>;
+                          })}
+                        </ul>
+                      </li>
+                    );
+                  })}
+                <div></div>
+              </div>
+              <span>Cupones</span>
+              <span>Historial</span>
+              <span>Supermercado</span>
+              <span>Moda</span>
+              <span>Mercado play</span>
+              <span>Vender</span>
+            </nav>
+          </div>
           <form className="space-input" onSubmit={(event) => search(event)}>
             <span className="material-symbols-outlined">search</span>
             <input type="text" name="" placeholder="Buscar en mercado libre" />

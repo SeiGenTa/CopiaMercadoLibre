@@ -175,3 +175,36 @@
   top: 11px;
   color: #707070;
 }
+
+.app-bar-mobile :focus-within nav {
+  transform: translateX(0);
+}
+
+.app-bar-mobile nav {
+  scrollbar-color: rgba(0, 0, 0, 0.5) rgba(0, 0, 0, 0);
+  scrollbar-width: thin;
+  transition: transform 0.2s;
+  transform: translateX(-100%);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: var(--mercadolibre-yellow);
+  z-index: 100;
+  top: 0;
+  left: 0;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.app-bar-mobile nav .categories li {
+  height: 0;
+  overflow: hidden;
+  transition: all 0.3s;
+  interpolate-size: allow-keywords;
+  list-style: none;
+}
+
+.app-bar-mobile nav .categories:focus-within li {
+  height: auto;
+}
